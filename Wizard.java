@@ -8,7 +8,7 @@ public class Wizard extends Adventurer{
     public Wizard(String name){
         super (name);
         Random randomGenerator = new Random();
-        this.intelligence = randomGenerator.nextInt(9) + 1;
+        this.intelligence = randomGenerator.nextInt(11) + 1;
     }
 
     // Getters
@@ -25,7 +25,7 @@ public class Wizard extends Adventurer{
     @Override
     public void open(Treasure chest){
         if(chest.getSpellResistance()<= this.intelligence){
-            this.setMoney(chest.getGold());
+            this.setMoney(this.getMoney() + chest.getGold());
             System.out.println(this.getName() + " opens the chest! He now has " + this.getMoney()+ " coins.");
         } else {
             System.out.println(this.getName() + " failed. The treasure is magically destroyed!");

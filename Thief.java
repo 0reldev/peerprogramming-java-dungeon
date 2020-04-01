@@ -7,7 +7,7 @@ public class Thief extends Adventurer {
     public Thief(String name) {
         super(name);
         Random randomGenerator = new Random();
-        this.dexterity = randomGenerator.nextInt(9)+1;
+        this.dexterity = randomGenerator.nextInt(11)+1;
     }
 
     public int getDexterity() {
@@ -23,7 +23,7 @@ public class Thief extends Adventurer {
     @Override
     public void open(Treasure chest) {
         if (chest.getPickResistance() <= this.dexterity) {
-            this.setMoney(chest.getGold());
+            this.setMoney(this.getMoney() + chest.getGold());
             System.out.println(this.getName() + " opens the chest! He now has " + this.getMoney() + " coins.");
         } else {
             System.out.println(this.getName() + " failed. The treasure is magically destroyed!");

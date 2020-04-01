@@ -42,10 +42,34 @@ class Dungeon {
 
         System.out.println("");
         // TODO : order adventurer by gold descending
+        Comparator<Adventurer> compareGold = new Comparator<Adventurer>(){
+        
+            @Override
+            public int compare(Adventurer current, Adventurer other) {
+                // if (current.getMoney() < other.getMoney()) {
+                //     return 1;
+                // }
+                // if (current.getMoney() > other.getMoney()) {
+                //     return -1;
+                // }
+                // return 0;
+                return other.getMoney() - current.getMoney();
+                // négative : current passe avant other
+                // zéro : l'ordre ne change pas
+                // positif : current passe après other
+            }
+        };
+        Collections.sort(adventurers, compareGold);
         for (Adventurer adventurer : adventurers) {
             // TODO : show adventurer gold
             System.out.println("The adventurer " + adventurer.getName() + " has " + adventurer.getMoney() + " coins!!");
 
         }
+        // Collections.sort(adventurers);
+        // for (Adventurer adventurer : adventurers) {
+        //     // TODO : show adventurer gold
+        //     System.out.println("The adventurer " + adventurer.getName() + " has " + adventurer.getMoney() + " coins!!");
+
+        // }
     }
 }

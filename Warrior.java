@@ -7,7 +7,7 @@ public class Warrior extends Adventurer {
     public Warrior( String name) {
         super(name);
         Random randomGenerator = new Random();
-        this.strength = randomGenerator.nextInt(9)+1;
+        this.strength = randomGenerator.nextInt(11)+1;
     }
 
     public int getStrength() {
@@ -17,7 +17,7 @@ public class Warrior extends Adventurer {
     @Override
     public void open(Treasure chest) {
         if (chest.getPickResistance() <= this.strength) {
-            this.setMoney(chest.getGold());
+            this.setMoney(this.getMoney() + chest.getGold());
             System.out.println(this.getName() + " opens the chest! He now has " + this.getMoney()+ " coins.");
         } else {
             System.out.println(this.getName() + " failed. The treasure is magically destroyed!");

@@ -1,7 +1,12 @@
-abstract class Adventurer {
+abstract class Adventurer implements Comparable<Adventurer> {
     
     private int gold;
     private String name;
+
+    // public abstract  int compareTo(T arg0);
+    public int compareTo(Adventurer other) {
+        return this.getMoney() - other.getMoney(); // croissant
+    }
 
     // Constructors
     public Adventurer(String name, int gold){
