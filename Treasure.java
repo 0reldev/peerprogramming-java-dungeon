@@ -8,6 +8,7 @@ class Treasure {
     private int gold;
 
     public Treasure() {
+
         Random randomGenerator = new Random();
         this.physicalResistance = randomGenerator.nextInt(10);
         this.spellResistance = randomGenerator.nextInt(10);
@@ -30,5 +31,4 @@ class Treasure {
     public int getGold() {
         return this.gold;
     }
-
 }

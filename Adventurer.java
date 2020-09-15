@@ -3,23 +3,21 @@ abstract class Adventurer implements Comparable<Adventurer> {
     private int gold;
     private String name;
 
-    // public abstract  int compareTo(T arg0);
     public int compareTo(Adventurer other) {
-        return this.getMoney() - other.getMoney(); // croissant
+        return this.getMoney() - other.getMoney();
     }
 
-    // Constructors
-    public Adventurer(String name, int gold){
+    public Adventurer(String name, int gold) {
+
         this.name = name;
         this.gold = gold;
     }
-    public Adventurer(String name){
+    public Adventurer(String name) {
+
         this.name = name;
         this.gold = 0 ;
     }
 
-
-    // Setters
     public void setName(String name) {
         this.name = name;
     }
@@ -28,7 +26,6 @@ abstract class Adventurer implements Comparable<Adventurer> {
         this.gold = gold;
     }
 
-    // Getters
     public String getName() {
         return this.name;
     }
@@ -36,8 +33,7 @@ abstract class Adventurer implements Comparable<Adventurer> {
     public int getMoney() {
         return this.gold;
     }
-    
-    // instance methods 
+
     public abstract void open(Treasure chest);
 
 
